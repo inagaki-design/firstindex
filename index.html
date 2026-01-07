@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社ファースト繊維 | 安全ベスト・腕章・横断幕の製作・販売</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0044CC', // メインカラー（信頼・誠実）
+                            dark: '#002a80',
+                            yellow: '#FFD700', // アクセントカラー（安全・注意）
+                            light: '#F3F4F6',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* スムーズスクロール */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* ヒーローセクションの背景オーバーレイ */
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-white flex flex-col min-h-screen">
+
+    <!-- ヘッダー -->
+    <header class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- ロゴエリア -->
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 bg-brand-blue text-white flex items-center justify-center rounded font-bold text-xl group-hover:bg-brand-dark transition">F</div>
+                <div>
+                    <h1 class="text-xl font-bold text-brand-blue tracking-tighter">株式会社ファースト繊維</h1>
+                    <p class="text-xs text-gray-500 hidden sm:block">安全ベスト・腕章のプロフェッショナル</p>
+                </div>
+            </a>
+
+            <!-- ナビゲーション（PC） -->
+            <nav class="hidden md:flex items-center gap-6">
+                <a href="#products" class="text-gray-700 hover:text-brand-blue font-medium transition">商品一覧</a>
+                <a href="#custom" class="text-gray-700 hover:text-brand-blue font-medium transition">名入れ・オーダー</a>
+                <a href="#company" class="text-gray-700 hover:text-brand-blue font-medium transition">会社概要</a>
+                <a href="#" class="bg-brand-yellow text-brand-blue hover:bg-yellow-400 font-bold py-2 px-6 rounded-full shadow-md transition transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-envelope mr-2"></i>お見積り・お問い合わせ
+                </a>
+            </nav>
+
+            <!-- ハンバーガーメニュー（SP） -->
+            <button class="md:hidden text-brand-blue text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="hero-bg relative h-[600px] flex items-center mt-16">
+        <!-- ブルーオーバーレイ -->
+        <div class="absolute inset-0 bg-brand-blue/80 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
+
+        <div class="container mx-auto px-4 relative z-10 text-white">
+            <div class="max-w-3xl">
+                <span class="inline-block bg-brand-yellow text-brand-blue px-3 py-1 rounded font-bold mb-4 text-sm md:text-base">
+                    現場の安全をサポートする信頼の品質
+                </span>
+                <h2 class="text-3xl md:text-5xl font-bold leading-tight mb-6 text-shadow">
+                    反射安全ベスト・腕章・車両幕<br>
+                    横断幕の製作・販売
+                </h2>
+                <p class="text-lg md:text-xl mb-8 font-light border-l-4 border-brand-yellow pl-4 text-shadow">
+                    多様な現場に対応する高品質な安全対策製品。<br>
+                    社名・ロゴ入り反射安全ベスト・腕章・車両幕・横断幕の製作・販売はお任せください。
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#products" class="bg-brand-yellow text-brand-blue hover:bg-white hover:text-brand-blue font-bold py-4 px-8 rounded shadow-lg transition text-center">
+                        商品ラインナップを見る <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#" class="bg-white/20 hover:bg-white/30 text-white border border-white font-bold py-4 px-8 rounded backdrop-blur-sm transition text-center">
+                        カタログダウンロード <i class="fa-solid fa-download ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- メインコンテンツエリア -->
+    <div class="bg-brand-light py-12 md:py-20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-8">
+                
+                <!-- メイン：商品ラインナップ -->
+                <main class="w-full lg:w-3/4 order-2 lg:order-1">
+                    <div id="products" class="mb-4 flex items-center gap-4">
+                        <h2 class="text-3xl font-bold text-gray-800">商品ラインナップ</h2>
+                        <div class="h-1 flex-grow bg-gray-300 rounded"></div>
+                    </div>
+                    <p class="mb-8 text-gray-600">
+                        建設・工事現場、警備、イベントなど、あらゆるシーンに対応する安全用品を取り揃えております。
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- 商品カード 1 -->
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition group">
+                            <div class="h-48 bg-gray-200 relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="安全ベスト" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                <div class="absolute top-0 right-0 bg-brand-yellow text-brand-blue text-xs font-bold px-2 py-1">人気No.1</div>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-bold text-gray-800 mb-2">反射安全ベスト</h3>
+                                <p class="text-sm text-gray-600 mb-4 line-clamp-2">高輝度反射材を使用。夜間の視認性を高め、作業員の安全を守ります。メッシュ素材で通気性も抜群。</p>
+                                <a href="#" class="block w-full py-2 text-center border border-brand-blue text-brand-blue rounded hover:bg-brand-blue hover:text-white transition font-bold text-sm">
+                                    詳細を見る
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 商品カード 2 -->
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition group">
+                            <div class="h-48 bg-gray-200 relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="腕章" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-bold text-gray-800 mb-2">業務用 腕章</h3>
+                                <p class="text-sm text-gray-600 mb-4 line-clamp-2">ビニール製、布製など用途に合わせて選択可能。役職や役割を一目で識別できます。</p>
+                                <a href="#" class="block w-full py-2 text-center border border-brand-blue text-brand-blue rounded hover:bg-brand-blue hover:text-white transition font-bold text-sm">
+                                    詳細を見る
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 商品カード 3 -->
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition group">
+                            <div class="h-48 bg-gray-200 relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="車両幕・横断幕" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-bold text-gray-800 mb-2">車両幕・横断幕</h3>
+                                <p class="text-sm text-gray-600 mb-4 line-clamp-2">現場のスローガン掲示や社名アピールに。耐久性の高いターポリン素材を使用。</p>
+                                <a href="#" class="block w-full py-2 text-center border border-brand-blue text-brand-blue rounded hover:bg-brand-blue hover:text-white transition font-bold text-sm">
+                                    詳細を見る
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 商品カード 4 -->
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition group">
+                            <div class="h-48 bg-gray-200 relative overflow-hidden">
+                                <div class="w-full h-full bg-gray-100 flex items-center justify-center text-gray-400">
+                                    <i class="fa-solid fa-helmet-safety text-4xl"></i>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-bold text-gray-800 mb-2">ヘルメット用シール</h3>
+                                <p class="text-sm text-gray-600 mb-4 line-clamp-2">社名、血液型、資格などの表示に。反射タイプもご用意しています。</p>
+                                <a href="#" class="block w-full py-2 text-center border border-brand-blue text-brand-blue rounded hover:bg-brand-blue hover:text-white transition font-bold text-sm">
+                                    詳細を見る
+                                </a>
+                            </div>
+                        </div>
+
+                         <!-- 商品カード 5 -->
+                         <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition group">
+                            <div class="h-48 bg-gray-200 relative overflow-hidden">
+                                <div class="w-full h-full bg-gray-100 flex items-center justify-center text-gray-400">
+                                    <i class="fa-solid fa-shirt text-4xl"></i>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-bold text-gray-800 mb-2">オリジナルプリントウェア</h3>
+                                <p class="text-sm text-gray-600 mb-4 line-clamp-2">スタッフジャンパー、ポロシャツへのロゴ印刷。イベントやチームの結束に。</p>
+                                <a href="#" class="block w-full py-2 text-center border border-brand-blue text-brand-blue rounded hover:bg-brand-blue hover:text-white transition font-bold text-sm">
+                                    詳細を見る
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 商品カード 6 (Contact) -->
+                        <div class="bg-brand-blue rounded-lg shadow-md overflow-hidden hover:shadow-xl transition group flex flex-col justify-center items-center text-center p-6 text-white">
+                            <i class="fa-solid fa-clipboard-list text-5xl mb-4 text-brand-yellow"></i>
+                            <h3 class="text-xl font-bold mb-2">特注・オーダーメイド</h3>
+                            <p class="text-sm mb-4 text-blue-100">規格外のサイズや特殊な素材での製作も承ります。</p>
+                            <a href="#" class="inline-block bg-white text-brand-blue py-2 px-6 rounded-full font-bold hover:bg-brand-yellow transition shadow-lg">
+                                相談する
+                            </a>
+                        </div>
+
+                    </div>
+                    
+                    <!-- 着用イメージセクション -->
+                    <div class="mt-16">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6 border-l-4 border-brand-blue pl-4">現場使用イメージ</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="rounded shadow w-full h-40 object-cover hover:opacity-80 transition" alt="現場イメージ1">
+                            <img src="https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="rounded shadow w-full h-40 object-cover hover:opacity-80 transition" alt="現場イメージ2">
+                            <img src="https://images.unsplash.com/photo-1535732759880-bbd5c7265e3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="rounded shadow w-full h-40 object-cover hover:opacity-80 transition" alt="現場イメージ3">
+                            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb7d5b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="rounded shadow w-full h-40 object-cover hover:opacity-80 transition" alt="現場イメージ4">
+                        </div>
+                    </div>
+                </main>
+
+                <!-- サイドバー -->
+                <aside class="w-full lg:w-1/4 order-1 lg:order-2">
+                    <div class="sticky top-24 space-y-8">
+                        
+                        <!-- 名入れ・ロゴ印刷 -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden border-t-4 border-brand-blue">
+                            <div class="bg-gray-100 p-4 border-b">
+                                <h3 class="font-bold text-brand-blue flex items-center">
+                                    <i class="fa-solid fa-pen-nib mr-2"></i> 名入れ・ロゴ印刷
+                                </h3>
+                            </div>
+                            <div class="p-4">
+                                <img src="https://images.unsplash.com/photo-1565514020176-db8b325253eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="名入れイメージ" class="w-full h-32 object-cover rounded mb-3">
+                                <p class="text-xs text-gray-500 mb-3">1枚から大口注文まで対応。企業のブランド力を高めます。</p>
+                                <ul class="space-y-2">
+                                    <li>
+                                        <a href="#" class="flex items-center text-sm text-gray-700 hover:text-brand-blue hover:bg-blue-50 p-2 rounded transition">
+                                            <i class="fa-solid fa-angle-right text-brand-yellow mr-2"></i> 名入れについて
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="flex items-center text-sm text-gray-700 hover:text-brand-blue hover:bg-blue-50 p-2 rounded transition">
+                                            <i class="fa-solid fa-angle-right text-brand-yellow mr-2"></i> カスタムベストラインナップ
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 職務名入り安全ベスト -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden border-t-4 border-brand-yellow">
+                            <div class="bg-gray-100 p-4 border-b">
+                                <h3 class="font-bold text-brand-blue flex items-center">
+                                    <i class="fa-solid fa-user-tag mr-2"></i> 職務名入り安全ベスト
+                                </h3>
+                            </div>
+                            <div class="p-4">
+                                <ul class="space-y-3">
+                                    <li>
+                                        <a href="#" class="block p-3 border border-gray-200 rounded hover:border-brand-blue hover:shadow-md transition bg-white">
+                                            <span class="block text-xs text-brand-blue font-bold mb-1">PHFVシリーズ</span>
+                                            <span class="block text-sm font-medium text-gray-800">職務名入り安全ベスト</span>
+                                            <span class="block text-xs text-gray-500 mt-1">「誘導員」「安全パトロール」等</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="block p-3 border border-gray-200 rounded hover:border-brand-blue hover:shadow-md transition bg-white">
+                                            <span class="block text-xs text-brand-blue font-bold mb-1">FZシリーズ</span>
+                                            <span class="block text-sm font-medium text-gray-800">職務名安全ベスト用ゼッケン</span>
+                                            <span class="block text-xs text-gray-500 mt-1">差し替え可能な便利タイプ</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- お問い合わせバナー -->
+                        <div class="bg-brand-blue rounded-lg shadow-lg p-5 text-center text-white">
+                            <h3 class="font-bold text-lg mb-2">お気軽にご相談ください</h3>
+                            <p class="text-sm mb-4 text-blue-100">大量注文・お見積り・納期確認など</p>
+                            <a href="#" class="block bg-brand-yellow text-brand-blue font-bold py-2 rounded-full hover:bg-white hover:text-brand-blue transition">
+                                お問い合わせフォーム
+                            </a>
+                            <div class="mt-4 pt-4 border-t border-blue-600">
+                                <p class="text-xs text-blue-200">TEL（平日 9:00-17:00）</p>
+                                <p class="text-xl font-bold font-mono">03-1234-5678</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- フッター -->
+    <footer class="bg-brand-dark text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <h2 class="text-2xl font-bold mb-4">株式会社ファースト繊維</h2>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                        安全ベスト、腕章、横断幕の製造・販売を通じて、建設現場や作業現場の「安全」と「安心」をサポートします。高品質な反射材を使用した製品を、スピーディーにお届けします。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-yellow hover:text-brand-blue transition">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-yellow hover:text-brand-blue transition">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-yellow hover:text-brand-blue transition">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 border-b border-gray-600 pb-2">商品カテゴリー</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-brand-yellow transition">反射安全ベスト</a></li>
+                        <li><a href="#" class="hover:text-brand-yellow transition">名入れベスト</a></li>
+                        <li><a href="#" class="hover:text-brand-yellow transition">腕章</a></li>
+                        <li><a href="#" class="hover:text-brand-yellow transition">車両幕・横断幕</a></li>
+                        <li><a href="#" class="hover:text-brand-yellow transition">PHFVシリーズ</a></li>
+                        <li><a href="#" class="hover:text-brand-yellow transition">FZシリーズ</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4 border-b border-gray-600 pb-2">会社情報</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-brand-yellow transition">会社概要</a></li>
+                        <li><a href="#" class="hover:text-brand-yellow transition">特定商取引法に基づく表記</a></li>
+                        <li><a href="#" class="hover:text-brand-yellow transition">プライバシーポリシー</a></li>
+                        <li><a href="#" class="hover:text-brand-yellow transition">お問い合わせ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2024 First Fiber Co., Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
